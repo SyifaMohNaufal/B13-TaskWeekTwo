@@ -1,0 +1,16 @@
+.card {
+    column-count:  4;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    break-inside: avoid;
+}
+.row {
+    overflow: hidden;
+    break-inside: avoid;
+}
+
+.card {
+    overflow: hidden;
+    break-inside: avoid;
+}

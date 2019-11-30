@@ -1,0 +1,9 @@
+
+
+.Parent {
+    column-count:  4;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    break-inside: avoid;
+}
