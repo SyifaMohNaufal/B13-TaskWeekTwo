@@ -3,7 +3,6 @@ import './Login.css'
 import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -22,6 +21,7 @@ class Login extends Component {
                 const response = await axios.post(`http://localhost:3014/login`, this.state)
                 console.log('returned data: ', response.data)
                 console.log(response.data.token.token);
+
                 if (response.data) {
                     localStorage.setItem("authorization", JSON.stringify(response.data.token.token));
                     this.setState({ redirect: true })
@@ -36,7 +36,7 @@ class Login extends Component {
 
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
-        // console.log(this.state)
+        console.log(this.state)
     }
 
     handleSubmit(e) {
@@ -49,7 +49,7 @@ class Login extends Component {
         }
         return (
             <body className="loginPage">
-                <div className="container mx-auto" >
+                <div className="container w-100 mx-auto" >
                     <div className="row mx-auto">
                         <div className="col-sm-7 col-md-5 col-lg-11 mx-auto">
                             <div className="card card-signin mx-auto my-5 w-100">
@@ -70,7 +70,8 @@ class Login extends Component {
                                             <label className="custom-control-label" htmlFor="customCheck1">Remember password</label>
                                         </div>
                                         <button className="btn btn-lg btn-primary btn-block text-uppercase" type="button" onClick={this.login}>Sign in</button>
-                                        <Link to="/signup" ><button className="btn btn-lg btn-info btn-block text-uppercase mt-2" type="submit"> Sign up</button></Link>
+                                        <Link to="/signup" ><button className="btn btn-lg btn-default  btn-block text-uppercase mt-2 border-dark" type="submit"> Sign up</button></Link>
+                                        <Link to="/home" ><button className="btn btn-lg btn-success btn-lighter  btn-block text-uppercase mt-2" type="submit"> Guest </button></Link>
                                     </form>
                                 </div>
                             </div>

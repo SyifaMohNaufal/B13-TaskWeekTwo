@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import Cards from './components/Card/Cards'
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

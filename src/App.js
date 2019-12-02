@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 
-import SignUp from './components/SignUp/SignUp';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import SignUp from './components/SignUp/SignUp';
+import Login from "./components/Login/Login";
+import Home from "./pages/Home/Home";
+import Profile from "./pages/Profile/Profile";
 import Chat from "./pages/Chat/Chat";
 import Notif from "./pages/Notif/Notif";
-import Setting from "./pages/Setting";
-import Login from "./components/login/Login"
-import Front from "./components/Front/Front"
-// import Card from "./components/Card/Card"
-import Cards from "./components/Card/Cards"
+import Setting from "./pages/Setting/Setting";
+import Front from "./components/Front/Front";
+import Cards from "./components/Card/Cards";
+import Form from "../src/pages/Profile/IsiFrom"
 
 class App extends Component {
     render() {
         return (
-            <Router>
-                <div>
+            <div>
+                <Router>
                     <Route path={"/login"} component={Login} />
                     <Route path={"/signup"} component={SignUp} />
                     <Route path={"/home"} component={Home} />
@@ -24,12 +24,11 @@ class App extends Component {
                     <Route path={"/chat"} component={Chat} />
                     <Route path={"/notif"} component={Notif} />
                     <Route path={"/setting"} component={Setting} />
-                    {/* <Route path={"/card"} component={Card} />  */}
                     <Route path={"/cards"} component={Cards} />
                     <Route path="/" exact component={Front} />
-
-                </div>
-            </Router>
+                    <Route path={'/form'} component ={Form} />
+                </Router>
+            </div>
         )
     }
 }

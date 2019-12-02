@@ -46,7 +46,7 @@
     border-radius: 6px;
     background-color: #ffffff;
     box-shadow: 0 0 7px 0px #333;
-}
+    }
 .img-profile{
     position: relative;
     display: inline-block;
@@ -56,6 +56,7 @@
     float: left;
     top: 25px;
     margin-left: 40px;
+    border: 1px solid black;
 }
 .photo{
     height: 100%;
@@ -151,4 +152,12 @@ input{
         margin-right: 5%;
         margin-top: 30px;
     }
+}
+
+.setHide {
+    display: none;
+}
+
+.setShow {
+    display: block;
 }
