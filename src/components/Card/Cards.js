@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import './Card.css'
 import axios from 'axios';
 
@@ -22,7 +23,7 @@ class Cards extends Component {
       const {items} = this.state
         return(
           <section id="cardEng">
-           <div className="container my-3 py-5 text-center">
+           <div className="container my-3 py-5 pl-5 text-center">
              
             <div className="row">
               {items.map((item, index) =>             
@@ -37,7 +38,7 @@ class Cards extends Component {
         <p className="card-text">Project done :{item.project} </p>
         <p className="card-text">Success rate: {item.success}%</p>
         <p className="card-text">Skill: {item.skill_name}</p>
-          {/* <a href="/" className="btn btn-primary">Go somewhere</a> */}
+          <Link to ={"/details/" + item.id_eng}  className="btn btn-primary">More Details</Link>
         </div>
       </div>  
       </div>

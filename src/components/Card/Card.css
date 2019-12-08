@@ -1,16 +1,11 @@
 .card {
     column-count:  4;
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
-    break-inside: avoid;
-}
-.row {
-    overflow: hidden;
-    break-inside: avoid;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill);
 }
 
-.card {
-    overflow: hidden;
-    break-inside: avoid;
-}

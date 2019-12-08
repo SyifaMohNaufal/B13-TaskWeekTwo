@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar-Guest'
 
 class notif extends Component{
     render(){

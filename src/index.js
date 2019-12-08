@@ -3,8 +3,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import App from './App';
+// import Project from './components/ProjectCard/Project'
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

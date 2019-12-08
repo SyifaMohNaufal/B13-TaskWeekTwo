@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Cards from '../../components/Card/Cards'      
-import Navbar  from '../../components/Navbar/Navbar';
+import Card from '../../components/Card/Card'      
+import Navbar  from '../../components/Navbar/Navbar-Guest';
 import axios from 'axios'
 
 import './Home.css';
@@ -27,7 +27,7 @@ async componentDidMount()  {
         return  (
             <div>
                 <Navbar />                              
-                <Cards
+                <Card
                     dataEngineer={this.state.engineer}
                     />
                 </div>

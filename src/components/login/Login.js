@@ -16,15 +16,16 @@ class Login extends Component {
     }
 
     async login() {
-        if (this.state.username && this.state.password) {
+        if (this.state.username && this.state.password){
             try {
                 const response = await axios.post(`http://localhost:3014/login`, this.state)
-                console.log('returned data: ', response.data)
+                console.log('returned data: ', response.data.token.token)
                 console.log(response.data.token.token);
 
                 if (response.data) {
-                    localStorage.setItem("authorization", JSON.stringify(response.data.token.token));
-                    this.setState({ redirect: true })
+                    // axios.headers.common['authorization'] = response.data.token.token;
+                    localStorage.setItem("authorization",(response.data.token.token));
+                    this.setState({ login: true })
                 }
             } catch (error) {
                 console.log(`Axios request failed: ${error}`)
@@ -34,25 +35,25 @@ class Login extends Component {
         }
     }
 
-    onChange(e) {
-        this.setState({ [e.target.name]: e.target.value })
+    onChange(event) {
+        this.setState({ [event.target.name]: event.target.value })
         console.log(this.state)
     }
 
-    handleSubmit(e) {
-        e.preventDefault()
+    handleSubmit(event) {
+        event.preventDefault()
     }
 
     render() {
-        if (this.state.redirect) {
-            return <Redirect to={'/home'} />
+        if (this.state.login) {
+            return <Redirect to={'/homeC'} />
         }
         return (
-            <body className="loginPage">
+            <div className="loginPage">
                 <div className="container w-100 mx-auto" >
                     <div className="row mx-auto">
                         <div className="col-sm-7 col-md-5 col-lg-11 mx-auto">
-                            <div className="card card-signin mx-auto my-5 w-100">
+                            <div className="card card-signin mx-auto my-5 w-50 min-w-75">
                                 <div className="card-body">
                                     <Link to="/"><button className="btn btn-sm btn-primary" type="button">Back</button></Link>
                                     <h5 className="card-title text-center">Sign In</h5>
@@ -78,7 +79,7 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
-            </body>
+            </div>
         )
     }
 }

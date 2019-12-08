@@ -1,14 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link, Redirect} from 'react-router-dom'
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './SignUp.css'
 import axios from 'axios';
 
-class SignUp extends React.Component {
+class SignUp extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             login: false
         }
@@ -29,7 +28,8 @@ class SignUp extends React.Component {
                         username: '',
                         name: '',
                         email: '',
-                        password: ''
+                        password: '',
+                        level: ''
                         }}
 
                     validationSchema={Yup.object().shape({
@@ -39,19 +39,20 @@ class SignUp extends React.Component {
                         password: Yup.string().required('Password is required')
                         })}
 
-                    onSubmit={({ username, email, password, name }, { setStatus, setSubmitting }) => {
+                    onSubmit={({ username, email, password, name, level }, { setStatus, setSubmitting }) => {
                         setStatus();
 
                         const data = {
                             name: name,
                             username: username,
                             email: email,
-                            password: password
+                            password: password,
+                            level: '2',
                             }
 
                         axios({
                             method: 'post',
-                            url: 'http://localhost:3014/user',
+                            url: 'http://localhost:3014/register',
                             headers: {'Content-Type': 'application/json'},
                             data: data
                             })
@@ -110,9 +111,19 @@ class SignUp extends React.Component {
                             </div>
 
                             <div className="form-group">
+                                <label>Who are you?</label>
+                                <Field as="select" name="level" className="form-control">
+                                <option value="0">-select user type-</option>
+                                    <option value="2">Engineer</option>
+                                    <option value="1">Company</option>
+                                </Field>
+                            </div>
+
+                            <div className="form-group">
                                 <button type="submit" className="btn btn-primary btn-block" disabled={isSubmitting}>Sign Up</button>
                             </div>
-                            
+                             
+
                             <p className="loginhere"> Already have an account ? 
                                 <a href="/login" className="loginhere-link">{" "} Log in</a>
                             </p>

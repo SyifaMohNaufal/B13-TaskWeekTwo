@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom'
-import Navbar from '../../components/Navbar/Navbar'
+import Navbar from '../../components/Navbar/Navbar-Guest'
 import './Profile.css'
+import foto from '../img/sample2.jpg'
+
+const styleCss = {
+    photo: {
+        backgroundImage: `url(${foto})`
+    }
+}
 
 class isiForm extends Component {
     constructor(props) {
@@ -15,37 +21,43 @@ class isiForm extends Component {
             <div>
                 <Navbar />
                 <section className="box-profile">
-                    <div className="img-profile">
-                        <div className="photo"
-                        // style={styleCss.photo} 
-                        ></div>
-                    </div>
+                <div className="img-profile">
+                            <div className="photo"
+                                style={styleCss.photo} 
+                            ></div>
+                        </div>
+
                     <div className="description">
-                        <h1 id="pName">Syifa Mohammad Naufal</h1>
-                        <p id="pRole">Front End Designer</p>
-                        <a href="/profile" className="button bg-green" onClick={this.setHide}>Edit Profile</a>
-                    </div>
-                    <div className="information">
-                        <div className="data">
-                            <p className="field">Project Done</p>
-                            <p id="pProject" className="text-dark">10</p>
+                            <h1 id="pName"> Profile Name </h1>
+                            <p id="pRole"> Profile Role </p>
+                            <a href="/form" className="button bg-green" onClick='/form'>Edit Profile</a >
                         </div>
-                        <div className="data">
-                            <p className="field">Success rate</p>
-                            <p id="pSuccess" className="text-dark">75%</p>
-                        </div>
-                        <div className="data">
-                            <p className="field">Skills</p>
-                            <p id="pSkill" className="text-dark">Javascript</p>
-                        </div>
-                        <div className="data">
-                            <p className="field">Location</p>
-                            <p id="pLocation" className="text-dark">Bogor, Indonesia</p>
-                        </div>
-                        <div className="data">
-                            <p className="field">Email</p>
-                            <p id="pEmail" className="text-dark">Syifamnaufal@gmail.com</p>
-                        </div>
+
+                        <div className="information">
+                                <div className="data">
+                                    <p className="field">Project Done</p>
+                                    <p id="pProject" className="text-dark"> # </p>
+                                </div>
+
+                                <div className="data">
+                                    <p className="field">Success rate</p>
+                                    <p id="pSuccess" className="text-dark">#%</p>
+                                </div>
+
+                                <div className="data">
+                                    <p className="field">Skills</p>
+                                    <p id="pSkill" className="text-dark">Skill Name</p>
+                                </div>
+
+                                <div className="data">
+                                    <p className="field">Location</p>
+                                    <p id="pLocation" className="text-dark">Location Name</p>
+                                </div>
+
+                                <div className="data">
+                                    <p className="field">Email</p>
+                                    <p id="pEmail" className="text-dark">email@email.com</p>
+                                </div>
                     </div>
                 </section>
 
@@ -79,8 +91,15 @@ class isiForm extends Component {
                             <label>Email</label>
                             <input id="inpEmail" type="email" name="email" />
                         </div>
+                        <div className="form-group">
+                            <label for="upload">Profile Image</label>
+                            <br></br>
+                            <p> Please upload your best image for your profile. </p>
+                            <input type="file" classNames="form-control-file" id="upload"/>
+                        </div>
                         <div className="form">
-                            <input onClick="/profile" type="Submit" name="submit" defaultValue="SUBMIT" className="bg-blue" />
+                            {/* <input onClick="/profile" type="submit" name="submit" defaultValue="SUBMIT" className="bg-blue" /> */}
+                            <a href="/profile" className="button bg-blue text-center" onClick='/profile'>submit</a >
                         </div>
                     </form>
                 </section>
