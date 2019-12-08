@@ -26,7 +26,7 @@ class isiForm extends Component {
     }
     async submitProfile() {
         try {
-          const response = await axios.post("http://54.173.46.17:3014/company/", {
+          const response = await axios.post("http://54.173.46.17:5000/company/", {
             company_name: this.state.company_name,
             company_desc: this.state.company_desc,
             company_location: this.state.company_location,
