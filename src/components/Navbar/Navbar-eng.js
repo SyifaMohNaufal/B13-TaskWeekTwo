@@ -11,13 +11,6 @@ const navbar = () => {
             <img src={require('./icon/arkademy.png')} width="130px" height="90px" alt="logo"></img>
             </Link></div>
 
-          {/* <div className="App-searchbox">
-            <button type="submit" className="searchButton">
-              <img src={require('./icon/search.png')} alt='search button' width="20px" height="20px" className="search"></img>
-            </button>
-            <input type="text" placeholder="Search" className="search-box"></input>
-          </div> */}
-        
        <div className="spacer"></div>
 
         <div className="App-nav">

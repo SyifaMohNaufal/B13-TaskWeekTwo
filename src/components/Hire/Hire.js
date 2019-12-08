@@ -23,7 +23,7 @@ class Hire extends Component{
       }
         
       async componentDidMount() {
-        const response = await axios.get("http://localhost:3014/project");
+        const response = await axios.get("54.173.46.17:3014/project");
         const res = response.data.result;
         if (response.data) {
           const arr_pro = res.map(i => ({
@@ -36,7 +36,7 @@ class Hire extends Component{
     
       async hire() {
         try {
-          const response = await axios.post("http://localhost:3014/hire", {
+          const response = await axios.post("http://54.173.46.17:3014/hire", {
             id_project: this.state.selectedOptions.value,
             id_eng: this.state.id_eng,
             fee: this.state.fee,
@@ -81,11 +81,6 @@ render(){
             <div className="row ">
               <div className="col-12">
                 <article className="card w-50 mx-auto">
-                  {/* <img
-                    className="card-img-top mb-2"
-                    alt="engineer identity"
-                    src=""
-                  /> */}
                   <div className="card-body">
                     <h1 className="card-title display-4 text-center">Hire Form </h1>
                     <ul>

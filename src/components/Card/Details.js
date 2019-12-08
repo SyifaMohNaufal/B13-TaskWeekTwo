@@ -17,7 +17,7 @@ class details extends Component {
     componentDidMount () {
       axios({
          method: 'get',
-         url: 'http://localhost:3014/engineer/' + this.state.ideng,
+         url: 'http://54.173.46.17:3014/engineer/' + this.state.ideng,
          headers: {'Content-Type': 'application/json'},
       })
       .then(response => {
@@ -51,13 +51,13 @@ class details extends Component {
                 <div className="card ml-0"  style={{height:'35rem', width:'20rem'}}>
                         <div className="card-body">
                             <h5 className="card-title">{this.state.data.eng_name}</h5>
-                            <p className="card-text">Role                : {this.state.data.eng_desc}</p>
-                            <p className="card-text">Project done   : {this.state.data.project} </p>
-                            <p className="card-text">Success rate    : {this.state.data.success}%</p>
-                            <p className="card-text">Skill                 : {this.state.data.skill_name}</p>
-                            <p className="card-text">location          : {this.state.data.eng_location}</p>
-                            <p className="card-text">date of birth   : {this.state.data.eng_dob}</p>
-                            <p className="card-text">showcase        : {this.state.data.showcase}</p>
+                            <span className="card-text">Role                : {this.state.data.eng_desc}</span>
+                            <span className="card-text">Project done   : {this.state.data.project} </span>
+                            <span className="card-text">Success rate    : {this.state.data.success}%</span>
+                            <span className="card-text">Skill                 : {this.state.data.skill_name}</span>
+                            <span className="card-text">location          : {this.state.data.eng_location}</span>
+                            <span className="card-text">date of birth   : {this.state.data.eng_dob}</span>
+                            <span className="card-text">showcase        : {this.state.data.showcase}</span>
                             <Link to ={"/hire"}  className="btn btn-primary">Hire Me!</Link>
                         </div>
                 </div>
