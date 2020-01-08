@@ -17,7 +17,7 @@ class details extends Component {
     componentDidMount () {
       axios({
          method: 'get',
-         url: 'http://54.173.46.17:5000/engineer/' + this.state.ideng,
+         url: 'http://52.87.164.251:3013/engineer/' + this.state.ideng,
          headers: {'Content-Type': 'application/json'},
       })
       .then(response => {

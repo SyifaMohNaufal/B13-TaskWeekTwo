@@ -13,7 +13,7 @@ class Cards extends Component {
     
   }
   componentDidMount(){
-    axios.get(`http://54.173.46.17:5000/engineer`)
+    axios.get(`http://52.87.164.251:3013/engineer`)
     .then(res => {
       console.log(res)
     this.setState({ items : res.data.result})

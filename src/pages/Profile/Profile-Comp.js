@@ -23,7 +23,7 @@ class profile extends Component {
     componentDidMount () {
         axios({
            method: 'get',
-           url: 'http://54.173.46.17:5000/project/',
+           url: 'http://52.87.164.251:3013/project/',
            headers: {'Content-Type': 'application/json'},
         })
         .then(response => {

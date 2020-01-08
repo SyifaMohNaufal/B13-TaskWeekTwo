@@ -23,7 +23,7 @@ class Hire extends Component{
       }
         
       async componentDidMount() {
-        const response = await axios.get("54.173.46.17:5000/project");
+        const response = await axios.get("http://52.87.164.251:3013/project");
         const res = response.data.result;
         if (response.data) {
           const arr_pro = res.map(i => ({
@@ -36,7 +36,7 @@ class Hire extends Component{
     
       async hire() {
         try {
-          const response = await axios.post("http://54.173.46.17:5000/hire", {
+          const response = await axios.post("http://52.87.164.251:3013//hire", {
             id_project: this.state.selectedOptions.value,
             id_eng: this.state.id_eng,
             fee: this.state.fee,

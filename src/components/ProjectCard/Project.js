@@ -17,7 +17,7 @@ class Project extends Component{
     }
     async submitProject() {
         try {
-          const response = await axios.post("http://54.173.46.17:5000/project/", {
+          const response = await axios.post("http://52.87.164.251:3013/project/", {
             proj_name: this.state.proj_name,
             proj_desc: this.state.proj_desc,
             proj_deadline: this.state.proj_deadline,

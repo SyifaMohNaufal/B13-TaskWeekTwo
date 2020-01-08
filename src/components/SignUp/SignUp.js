@@ -52,7 +52,7 @@ class SignUp extends Component {
 
                         axios({
                             method: 'post',
-                            url: 'http://54.173.46.17:5000/register',
+                            url: 'http://52.87.164.251:3013/register',
                             headers: {'Content-Type': 'application/json'},
                             data: data
                             })
